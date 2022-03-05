@@ -27,11 +27,13 @@ NAME	=	${FT}.a
 
 # FILES
 # Type : `ls -l | grep ft_ | sed 's/.* //'` to get the name of every file
-SRCS	=	ft_isalnum.c \
+SRCS	=	ft_bzero.c \
+			ft_isalnum.c \
 			ft_isalpha.c \
 			ft_isascii.c \
 			ft_isdigit.c \
 			ft_isprint.c \
+			ft_memset.c \
 			ft_tolower.c \
 			ft_toupper.c
 OBJS	:=	${SRCS:.c=.o}

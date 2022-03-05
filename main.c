@@ -14,6 +14,8 @@
 #include <limits.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+#include <strings.h>
 #include <ctype.h>
 
 void	ft_ctype_tester(void)
@@ -28,8 +30,30 @@ void	ft_ctype_tester(void)
 				printf("Error on function %s with character : `%d` (Original : `%d`, yours : `%d`)\n", f_name[i], c, !!ctype[i](c), !!ft_ctype[i](c));
 }
 
+void	ft_memory_tester(void)
+{
+	char	s1[10];
+	char	s2[10];
+
+	// ft_memset
+	memset(s1, 1, 10);
+	memset(s2, 1, 10);
+	memset(s1 + 1, 'a', 4);
+	ft_memset(s2 + 1, 'a', 4);
+	if (memcmp(s1, s2, 10))
+		printf("Error on function ft_memset\n");
+	// ft_bzero
+	memset(s1, 1, 10);
+	memset(s2, 1, 10);
+	bzero(s1 + 1, 4);
+	ft_bzero(s2 + 1, 4);
+	if (memcmp(s1, s2, 10))
+		printf("Error on function ft_bzero\n");
+}
+
 int main(void)
 {
 	ft_ctype_tester();
+	ft_memory_tester();
 	return (0);
 }
