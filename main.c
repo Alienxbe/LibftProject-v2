@@ -32,6 +32,7 @@ void	ft_ctype_tester(void)
 
 void	ft_memory_tester(void)
 {
+	char	string[] = "Bonjour a tous les amis !";
 	char	s1[10];
 	char	s2[10];
 
@@ -49,6 +50,13 @@ void	ft_memory_tester(void)
 	ft_bzero(s2 + 1, 4);
 	if (memcmp(s1, s2, 10))
 		printf("Error on function ft_bzero\n");
+	// ft_memcpy
+	memset(s1, 1, 10);
+	memset(s2, 1, 10);
+	memcpy(s1 + 1, string, 4);
+	ft_memcpy(s2 + 1, string, 4);
+	if (memcmp(s1, s2, 10))
+		printf("Error on function ft_memcpy\n");
 }
 
 int main(void)
