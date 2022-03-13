@@ -6,7 +6,7 @@
 /*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 21:14:32 by mykman            #+#    #+#             */
-/*   Updated: 2022/03/13 00:08:01 by mykman           ###   ########.fr       */
+/*   Updated: 2022/03/13 17:00:09 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,11 +61,9 @@ void	ft_memory_tester(void)
 
 int main(void)
 {
-	char	s1[] = "ab";
-	char	s2[] = "aa";
+	char	string[] = "Ceci est une chaine de charactere";
 
-	printf("%d\n", ft_memcmp(s1, s2, strlen(s1)));
-	printf("%d\n", memcmp(s1, s2, strlen(s1)));
-	printf("%d\n", 'a' * 3);
+	printf("%p\n", strchr(string, 'D'));
+	printf("%p\n", ft_strchr(string, 'D'));
 	return (0);
 }
