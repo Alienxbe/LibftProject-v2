@@ -6,7 +6,7 @@
 /*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 21:14:32 by mykman            #+#    #+#             */
-/*   Updated: 2022/03/14 19:46:07 by mykman           ###   ########.fr       */
+/*   Updated: 2022/03/14 20:01:04 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ int main(void)
 	char	src[] = "Bonjour";
 	char	*dest;
 
-	dest = ft_strdup(src);
+	dest = ft_substr(src, 10, 3);
 	printf("%s\n", dest);
 	free(dest);
 	return (0);

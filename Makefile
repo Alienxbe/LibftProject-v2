@@ -6,7 +6,7 @@
 #    By: mykman <mykman@student.s19.be>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/21 19:34:14 by maykman           #+#    #+#              #
-#    Updated: 2022/03/14 19:43:07 by mykman           ###   ########.fr        #
+#    Updated: 2022/03/14 19:59:25 by mykman           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,7 +46,8 @@ SRCS	=	ft_bzero.c \
 			ft_strncmp.c \
 			ft_atoi.c \
 			ft_calloc.c \
-			ft_strdup.c
+			ft_strdup.c \
+			ft_substr.c
 OBJS	:=	${SRCS:.c=.o}
 
 # RULES

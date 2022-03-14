@@ -6,7 +6,7 @@
 /*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 21:03:19 by mykman            #+#    #+#             */
-/*   Updated: 2022/03/14 19:42:56 by mykman           ###   ########.fr       */
+/*   Updated: 2022/03/14 20:15:19 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,11 @@ int		ft_atoi(const char *str);
 // stdlib.h
 void	*ft_calloc(size_t nmemb, size_t size);
 char	*ft_strdup(const char *s);
+
+/*
+** Additional functions
+*/
+
+char	*ft_substr(char const *s, unsigned int start, size_t len);
 
 #endif
