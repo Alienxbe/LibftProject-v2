@@ -6,7 +6,7 @@
 /*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 21:03:19 by mykman            #+#    #+#             */
-/*   Updated: 2022/03/14 19:11:12 by mykman           ###   ########.fr       */
+/*   Updated: 2022/03/14 19:18:40 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_H
 
 # include <stdlib.h>
+# include <stdio.h>
 
 /*
 ** Libc functions
@@ -45,5 +46,8 @@ char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_atoi(const char *str);
+
+// stdlib.h
+void	*ft_calloc(size_t nmemb, size_t size);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 21:14:32 by mykman            #+#    #+#             */
-/*   Updated: 2022/03/14 19:10:09 by mykman           ###   ########.fr       */
+/*   Updated: 2022/03/14 19:28:01 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,10 +61,11 @@ void	ft_memory_tester(void)
 
 int main(void)
 {
-	char	s1[] = "--92233720368547758065456546549";
+	char	src[] = "Bonjour";
+	char	*dest;
 
-	printf("%lld\n", __LONG_LONG_MAX__);
-	printf("%d\n", ft_atoi(s1));
-	printf("%d\n", atoi(s1));
+	dest = ft_calloc((ft_strlen(src) + 1) ,sizeof(*src));
+	printf("%s\n", (char *)ft_memcpy(dest, src, ft_strlen(src)));
+	free(dest);
 	return (0);
 }
