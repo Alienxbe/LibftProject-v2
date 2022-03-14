@@ -6,7 +6,7 @@
 /*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 21:14:32 by mykman            #+#    #+#             */
-/*   Updated: 2022/03/14 19:28:01 by mykman           ###   ########.fr       */
+/*   Updated: 2022/03/14 19:46:07 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,8 +64,8 @@ int main(void)
 	char	src[] = "Bonjour";
 	char	*dest;
 
-	dest = ft_calloc((ft_strlen(src) + 1) ,sizeof(*src));
-	printf("%s\n", (char *)ft_memcpy(dest, src, ft_strlen(src)));
+	dest = ft_strdup(src);
+	printf("%s\n", dest);
 	free(dest);
 	return (0);
 }
