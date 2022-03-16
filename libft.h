@@ -6,7 +6,7 @@
 /*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 21:03:19 by mykman            #+#    #+#             */
-/*   Updated: 2022/03/16 11:06:27 by mykman           ###   ########.fr       */
+/*   Updated: 2022/03/16 12:15:45 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,5 +57,6 @@ char	*ft_strdup(const char *s);
 
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strtrim(char const *s1, char const *set);
 
 #endif

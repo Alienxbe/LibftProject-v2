@@ -6,7 +6,7 @@
 /*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 21:14:32 by mykman            #+#    #+#             */
-/*   Updated: 2022/03/16 11:09:46 by mykman           ###   ########.fr       */
+/*   Updated: 2022/03/16 12:20:06 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,12 +61,11 @@ void	ft_memory_tester(void)
 
 int main(void)
 {
-	char	s1[] = "Bonjour ";
-	char	*s2 = NULL;
+	char	s1[] = "salut ";
 	char	*str;
 
-	str = ft_strjoin(s1, s2);
-	printf("%p\n", str);
+	str = ft_strtrim(s1, " ");
+	printf("%s\n", str);
 	free(str);
 	return (0);
 }
