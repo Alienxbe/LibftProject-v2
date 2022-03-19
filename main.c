@@ -6,7 +6,7 @@
 /*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 21:14:32 by mykman            #+#    #+#             */
-/*   Updated: 2022/03/19 17:32:30 by mykman           ###   ########.fr       */
+/*   Updated: 2022/03/19 19:34:30 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,9 +59,43 @@ void	ft_memory_tester(void)
 		printf("Error on function ft_memcpy\n");
 }
 
+void	del(void *content)
+{
+	printf("freeing : `%s`\n", (char *)content);
+	free(content);
+}
+
+void	printcontent(void *content)
+{
+	static int	total;
+
+	total += *(int *)content;
+	printf("total : %d\n", total);
+}
+
+void	*add(void *content)
+{
+	return (ft_itoa(*(int *)content + 5));
+}
+
 int main(void)
 {
-	ft_putnbr_fd(INT_MAX, STDOUT_FILENO);
-	ft_putchar_fd('\n', STDOUT_FILENO);
+	t_list	*lst;
+	t_list	*clst;
+	int		a;
+	int		b;
+	int		c;
+
+	a = 10;
+	b = 20;
+	c = 30;
+	lst = NULL;
+	ft_lstadd_back(&lst, ft_lstnew(&a));
+	ft_lstadd_back(&lst, ft_lstnew(&b));
+	ft_lstadd_back(&lst, ft_lstnew(&c));
+	ft_lstiter(lst, &printcontent);
+	clst = ft_lstmap(lst, &add, &del);
+	ft_lstclear(&clst, &del);
+	ft_lstclear(&lst, NULL);
 	return (0);
 }
