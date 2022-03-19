@@ -6,7 +6,7 @@
 /*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 21:14:32 by mykman            #+#    #+#             */
-/*   Updated: 2022/03/19 06:05:45 by mykman           ###   ########.fr       */
+/*   Updated: 2022/03/19 14:58:56 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,17 +61,11 @@ void	ft_memory_tester(void)
 
 int main(void)
 {
-	char	s1[] = "Salut   comment tu vas Louane     ";
-	char	**split;
-	int		i;
+	char	*str;
 
-	split = ft_split(s1, ' ');
-	i = 0;
-	while (split[i])
-	{
-		printf("%s\n", split[i]);
-		free(split[i++]);
-	}
-	free(split);
+	str = ft_itoa(0);
+	printf("%s\n", str);
+	if (str)
+		free(str);
 	return (0);
 }
