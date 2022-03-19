@@ -6,7 +6,7 @@
 /*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 21:14:32 by mykman            #+#    #+#             */
-/*   Updated: 2022/03/19 14:58:56 by mykman           ###   ########.fr       */
+/*   Updated: 2022/03/19 17:32:30 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,11 +61,7 @@ void	ft_memory_tester(void)
 
 int main(void)
 {
-	char	*str;
-
-	str = ft_itoa(0);
-	printf("%s\n", str);
-	if (str)
-		free(str);
+	ft_putnbr_fd(INT_MAX, STDOUT_FILENO);
+	ft_putchar_fd('\n', STDOUT_FILENO);
 	return (0);
 }
