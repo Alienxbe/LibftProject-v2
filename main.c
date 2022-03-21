@@ -6,7 +6,7 @@
 /*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 21:14:32 by mykman            #+#    #+#             */
-/*   Updated: 2022/03/19 19:34:30 by mykman           ###   ########.fr       */
+/*   Updated: 2022/03/21 18:35:16 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void	del(void *content)
 	free(content);
 }
 
-void	printcontent(void *content)
+void	printcontent4(void *content)
 {
 	static int	total;
 
@@ -80,22 +80,12 @@ void	*add(void *content)
 
 int main(void)
 {
-	t_list	*lst;
-	t_list	*clst;
-	int		a;
-	int		b;
-	int		c;
+	char	str[] = "lorem ipsum dolor sit amet";
+	char	*substr;
 
-	a = 10;
-	b = 20;
-	c = 30;
-	lst = NULL;
-	ft_lstadd_back(&lst, ft_lstnew(&a));
-	ft_lstadd_back(&lst, ft_lstnew(&b));
-	ft_lstadd_back(&lst, ft_lstnew(&c));
-	ft_lstiter(lst, &printcontent);
-	clst = ft_lstmap(lst, &add, &del);
-	ft_lstclear(&clst, &del);
-	ft_lstclear(&lst, NULL);
+	substr = ft_substr(str, 7, 10);
+	printf("%s\n", substr);
+	if (substr)
+		free(substr);
 	return (0);
 }
