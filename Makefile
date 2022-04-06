@@ -6,7 +6,7 @@
 #    By: maykman <maykman@student.s19.be>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/21 19:34:14 by maykman           #+#    #+#              #
-#    Updated: 2022/04/06 18:29:25 by maykman          ###   ########.fr        #
+#    Updated: 2022/04/06 19:22:38 by maykman          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,7 +60,8 @@ SRCS		=	ft_atoi.c \
 				ft_tolower.c \
 				ft_toupper.c \
 				ft_strlcpy.c \
-				ft_strlcat.c
+				ft_strlcat.c \
+				ft_strnstr.c
 SRCS_BONUS	=	ft_lstadd_back.c \
 				ft_lstadd_front.c \
 				ft_lstclear.c \
