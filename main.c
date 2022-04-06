@@ -6,7 +6,7 @@
 /*   By: maykman <maykman@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 21:14:32 by mykman            #+#    #+#             */
-/*   Updated: 2022/04/06 17:47:42 by maykman          ###   ########.fr       */
+/*   Updated: 2022/04/06 19:09:30 by maykman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,12 +80,12 @@ void	*add(void *content)
 
 int main(void)
 {
-	char	str[] = "lorem ipsum dolor sit amet";
-	char	*substr;
+	char	dst[7] = "abc";
+	char	dst2[7] = "abc";
+	char	src[] = "Bonjour";
 
-	substr = ft_substr(str, 7, 10);
-	printf("%s\n", substr);
-	if (substr)
-		free(substr);
+	printf("%s\n",dst);
+	printf("%s: %zu\n", dst, ft_strlcat(dst, src, 10));
+	printf("%s: %lu\n", dst2, strlcat(dst2, src, 10));
 	return (0);
 }

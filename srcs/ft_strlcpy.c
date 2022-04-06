@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maykman <maykman@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/12 00:38:50 by mykman            #+#    #+#             */
-/*   Updated: 2022/04/06 18:40:47 by maykman          ###   ########.fr       */
+/*   Created: 2022/04/06 17:49:46 by maykman           #+#    #+#             */
+/*   Updated: 2022/04/06 19:04:26 by maykman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	while (n--)
+	size_t	srclen;
+
+	srclen = ft_strlen(src);
+	if (srclen > dstsize - 1)
 	{
-		printf("Copyingg char : %d (%c)\n", *((unsigned char *)src + n), *((unsigned char *)src + n));
-		*((unsigned char *)dest + n) = *((unsigned char *)src + n);
+		ft_memcpy(dst, src, dstsize - 1);
+		dst[dstsize - 1] = 0;
 	}
-	return (dest);
+	else
+		ft_memcpy(dst, src, ft_strlen(src) + 1);
+	return (srclen);
 }
