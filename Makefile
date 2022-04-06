@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mykman <mykman@student.s19.be>             +#+  +:+       +#+         #
+#    By: maykman <maykman@student.s19.be>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/21 19:34:14 by maykman           #+#    #+#              #
-#    Updated: 2022/03/19 19:45:15 by mykman           ###   ########.fr        #
+#    Updated: 2022/04/06 17:46:54 by maykman          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,7 @@ RESET		:=	\033[38;5;7m
 # VARIABLES
 FT			=	libft
 NAME		=	${FT}.a
+INCLUDES	=	./includes
 
 # FILES
 # Type : `ls -l | grep ft_ | sed 's/.* //'` to get the name of every file
@@ -67,12 +68,12 @@ SRCS_BONUS	=	ft_lstadd_back.c \
 				ft_lstmap.c \
 				ft_lstnew.c \
 				ft_lstsize.c
-OBJS		:=	${SRCS:.c=.o}
-OBJS_BONUS	:=	${SRCS_BONUS:.c=.o}
+OBJS		:=	$(addprefix srcs/, ${SRCS:.c=.o})
+OBJS_BONUS	:=	$(addprefix srcs/, ${SRCS_BONUS:.c=.o})
 
 # RULES
 %.o:		%.c
-	${CC} ${CFLAGS} -c -I.${INCLUDES} $< -o ${<:.c=.o}
+	${CC} ${CFLAGS} -c -I./${INCLUDES} $< -o ${<:.c=.o}
 	@echo "${BLUE}Compilation of $<...${RESET}"
 
 $(NAME):	${OBJS}

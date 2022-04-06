@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
+/*   By: maykman <maykman@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 21:14:32 by mykman            #+#    #+#             */
-/*   Updated: 2022/03/21 18:35:16 by mykman           ###   ########.fr       */
+/*   Updated: 2022/04/06 17:47:42 by maykman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "includes/libft.h"
 #include <limits.h>
 #include <stdio.h>
 #include <stdlib.h>
