@@ -6,7 +6,7 @@
 /*   By: maykman <maykman@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 21:14:32 by mykman            #+#    #+#             */
-/*   Updated: 2022/04/14 18:44:57 by maykman          ###   ########.fr       */
+/*   Updated: 2022/04/14 22:38:58 by maykman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,12 +65,9 @@ void	del(void *content)
 	free(content);
 }
 
-void	printcontent4(void *content)
+void	printcontent(void *content)
 {
-	static int	total;
-
-	total += *(int *)content;
-	printf("total : %d\n", total);
+	printf("%c\n", *(unsigned char *)content);
 }
 
 void	*add(void *content)
@@ -78,13 +75,28 @@ void	*add(void *content)
 	return (ft_itoa(*(int *)content + 5));
 }
 
+void	*upcase(void *content)
+{
+	unsigned char	*new;
+	new = (unsigned char *)malloc(sizeof(*new) * 1);
+	if (new)
+		new[0] = ft_toupper(*(unsigned char *)content);
+	return (new);
+}
+
 int main(void)
 {
-	void	*s;
-	// char	e[] = {0, 0, 0, 0};
+	t_list			*lst;
+	t_list			*newlst;
+	unsigned char	s[] = "Bonjour";
 
-	s = calloc(UINTPTR_MAX - 18446744073709551000UL, 1);
-	printf("%p\n", s);
-	// free(s);
+	lst = NULL;
+	for (int i = 0; s[i]; i++)
+	{
+		ft_lstadd_back(&lst, ft_lstnew(s + i));
+	}
+	ft_lstiter(lst, &printcontent);
+	newlst = ft_lstmap(lst, NULL, &free);
+	ft_lstiter(newlst, &printcontent);
 	return (0);
 }

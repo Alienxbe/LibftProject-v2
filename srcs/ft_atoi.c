@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
+/*   By: maykman <maykman@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 18:55:43 by mykman            #+#    #+#             */
-/*   Updated: 2022/03/14 20:14:09 by mykman           ###   ########.fr       */
+/*   Updated: 2022/04/14 21:33:28 by maykman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ int	ft_atoi(const char *str)
 	while (ft_isdigit(*str))
 	{
 		n = n * 10 + *str++ - '0';
-		if (n > __LONG_LONG_MAX__ && sign > 0)
+		if (n > LLONG_MAX && sign > 0)
 			return (-1);
-		if (n > __LONG_LONG_MAX__ && sign < 0)
+		if (n > LLONG_MAX && sign < 0)
 			return (0);
 	}
 	return (n * sign);

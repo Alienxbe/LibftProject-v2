@@ -6,7 +6,7 @@
 /*   By: maykman <maykman@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 21:03:19 by mykman            #+#    #+#             */
-/*   Updated: 2022/04/14 16:27:49 by maykman          ###   ########.fr       */
+/*   Updated: 2022/04/14 21:32:54 by maykman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include <limits.h>
 
 /*
 ** Libc functions
