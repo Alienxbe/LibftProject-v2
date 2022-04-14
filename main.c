@@ -6,7 +6,7 @@
 /*   By: maykman <maykman@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 21:14:32 by mykman            #+#    #+#             */
-/*   Updated: 2022/04/14 16:52:34 by maykman          ###   ########.fr       */
+/*   Updated: 2022/04/14 18:44:57 by maykman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,11 +80,11 @@ void	*add(void *content)
 
 int main(void)
 {
-	char src[] = "coucou";
-	char dest[11]; ft_bzero(dest, 11); memset(dest, 'A', 10);
+	void	*s;
+	// char	e[] = {0, 0, 0, 0};
 
-	printf("%zu | %zu\n", ft_strlcpy(dest, src, 1), ft_strlen(src));
-	printf("%d\n", dest[0]);
-	printf("%s\n", dest);
+	s = calloc(UINTPTR_MAX - 18446744073709551000UL, 1);
+	printf("%p\n", s);
+	// free(s);
 	return (0);
 }
