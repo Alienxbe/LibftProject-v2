@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
+/*   By: maykman <maykman@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 17:49:07 by mykman            #+#    #+#             */
-/*   Updated: 2022/03/14 18:10:38 by mykman           ###   ########.fr       */
+/*   Updated: 2022/04/14 16:42:02 by maykman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strrchr(const char *s, int c)
 
 	ptr = (char *)s + ft_strlen(s);
 	while (ptr >= s)
-		if (*ptr-- == c)
+		if (*ptr-- == (unsigned char)c)
 			return (ptr + 1);
 	return (NULL);
 }
