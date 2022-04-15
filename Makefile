@@ -6,7 +6,7 @@
 #    By: maykman <maykman@student.s19.be>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/21 19:34:14 by maykman           #+#    #+#              #
-#    Updated: 2022/04/06 19:22:38 by maykman          ###   ########.fr        #
+#    Updated: 2022/04/15 14:30:07 by maykman          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -103,4 +103,4 @@ fclean:
 
 re:			fclean all
 
-.PHONY:		all clean fclean re
+.PHONY:		all clean bonus bclean fclean re
