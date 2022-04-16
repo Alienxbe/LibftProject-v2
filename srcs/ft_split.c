@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
+/*   By: maykman <maykman@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 12:22:28 by mykman            #+#    #+#             */
-/*   Updated: 2022/03/19 07:28:22 by mykman           ###   ########.fr       */
+/*   Updated: 2022/04/16 18:30:25 by maykman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static size_t	ft_wordcount(char const *s, char c)
 	size_t	wordcount;
 
 	wordcount = 0;
-	while (*s)
+	while (s && *s)
 	{
 		while (*s == c)
 			s++;
@@ -54,9 +54,10 @@ char	**ft_split(char const *s, char c)
 	size_t	i;
 
 	wc = ft_wordcount(s, c);
-	tab = ft_calloc(wc + 1, sizeof(*tab));
+	if (s)
+		tab = ft_calloc(wc + 1, sizeof(*tab));
 	i = -1;
-	while (++i < wc)
+	while (++i < wc && tab)
 	{
 		while (*s == c)
 			s++;
@@ -66,6 +67,7 @@ char	**ft_split(char const *s, char c)
 		while (*s && *s != c)
 			s++;
 	}
-	tab[i] = NULL;
+	if (tab)
+		tab[i] = NULL;
 	return (tab);
 }

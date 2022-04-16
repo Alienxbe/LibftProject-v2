@@ -6,7 +6,7 @@
 /*   By: maykman <maykman@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 21:14:32 by mykman            #+#    #+#             */
-/*   Updated: 2022/04/14 22:38:58 by maykman          ###   ########.fr       */
+/*   Updated: 2022/04/16 18:28:02 by maykman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,17 +86,9 @@ void	*upcase(void *content)
 
 int main(void)
 {
-	t_list			*lst;
-	t_list			*newlst;
-	unsigned char	s[] = "Bonjour";
-
-	lst = NULL;
-	for (int i = 0; s[i]; i++)
-	{
-		ft_lstadd_back(&lst, ft_lstnew(s + i));
-	}
-	ft_lstiter(lst, &printcontent);
-	newlst = ft_lstmap(lst, NULL, &free);
-	ft_lstiter(newlst, &printcontent);
+	char	*s = "      split       this for   me  !       ";
+	
+	char	**split = ft_split(s, ' ');
+	(void)split;
 	return (0);
 }
