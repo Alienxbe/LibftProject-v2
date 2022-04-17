@@ -6,7 +6,7 @@
 /*   By: maykman <maykman@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 12:22:28 by mykman            #+#    #+#             */
-/*   Updated: 2022/04/16 18:30:25 by maykman          ###   ########.fr       */
+/*   Updated: 2022/04/17 22:46:53 by maykman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static size_t	ft_wordcount(char const *s, char c)
 	size_t	wordcount;
 
 	wordcount = 0;
-	while (s && *s)
+	while (*s)
 	{
 		while (*s == c)
 			s++;
@@ -53,11 +53,14 @@ char	**ft_split(char const *s, char c)
 	size_t	wc;
 	size_t	i;
 
+	if (!s)
+		return (NULL);
 	wc = ft_wordcount(s, c);
-	if (s)
-		tab = ft_calloc(wc + 1, sizeof(*tab));
+	tab = ft_calloc(wc + 1, sizeof(*tab));
+	if (!tab)
+		return (NULL);
 	i = -1;
-	while (++i < wc && tab)
+	while (++i < wc)
 	{
 		while (*s == c)
 			s++;
@@ -67,7 +70,6 @@ char	**ft_split(char const *s, char c)
 		while (*s && *s != c)
 			s++;
 	}
-	if (tab)
-		tab[i] = NULL;
+	tab[i] = NULL;
 	return (tab);
 }
