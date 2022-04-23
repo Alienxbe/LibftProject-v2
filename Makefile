@@ -6,7 +6,7 @@
 #    By: maykman <maykman@student.s19.be>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/21 19:34:14 by maykman           #+#    #+#              #
-#    Updated: 2022/04/23 19:45:03 by maykman          ###   ########.fr        #
+#    Updated: 2022/04/23 23:48:20 by maykman          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,6 +30,7 @@ INCLUDES	=	./includes
 SRCS		=	ft_atoi.c \
 				ft_bzero.c \
 				ft_calloc.c \
+				ft_intsize.c \
 				ft_isalnum.c \
 				ft_isalpha.c \
 				ft_isascii.c \
