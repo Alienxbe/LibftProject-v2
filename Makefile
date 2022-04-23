@@ -6,7 +6,7 @@
 #    By: maykman <maykman@student.s19.be>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/21 19:34:14 by maykman           #+#    #+#              #
-#    Updated: 2022/04/15 14:30:07 by maykman          ###   ########.fr        #
+#    Updated: 2022/04/23 19:45:03 by maykman          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,6 @@ NAME		=	${FT}.a
 INCLUDES	=	./includes
 
 # FILES
-# Type : `ls -l | grep ft_ | sed 's/.* //'` to get the name of every file
 SRCS		=	ft_atoi.c \
 				ft_bzero.c \
 				ft_calloc.c \
@@ -61,8 +60,8 @@ SRCS		=	ft_atoi.c \
 				ft_toupper.c \
 				ft_strlcpy.c \
 				ft_strlcat.c \
-				ft_strnstr.c
-SRCS_BONUS	=	ft_lstadd_back.c \
+				ft_strnstr.c \
+				ft_lstadd_back.c \
 				ft_lstadd_front.c \
 				ft_lstclear.c \
 				ft_lstdelone.c \
@@ -72,7 +71,6 @@ SRCS_BONUS	=	ft_lstadd_back.c \
 				ft_lstnew.c \
 				ft_lstsize.c
 OBJS		:=	$(addprefix srcs/, ${SRCS:.c=.o})
-OBJS_BONUS	:=	$(addprefix srcs/, ${SRCS_BONUS:.c=.o})
 
 # RULES
 %.o:		%.c
@@ -85,17 +83,9 @@ $(NAME):	${OBJS}
 
 all:		${NAME}
 
-bonus:		${OBJS_BONUS}
-	@ar -rcs ${NAME} $^
-	@echo "${PREFIX}${YELLOW}Bonus functions added !${RESET}"
-
 clean:
 	@rm -f ${OBJS}
 	@echo "${YELLOW}Cleaning objects files...${RESET}"
-
-bclean:
-	@rm -f ${OBJS_BONUS}
-	@echo "${YELLOW}Cleaning bonus objects files...${RESET}"
 
 fclean:
 	@rm -f ${NAME} ${OBJS} ${OBJS_BONUS}
@@ -103,4 +93,4 @@ fclean:
 
 re:			fclean all
 
-.PHONY:		all clean bonus bclean fclean re
+.PHONY:		all clean fclean re
