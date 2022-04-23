@@ -6,7 +6,7 @@
 /*   By: maykman <maykman@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 17:49:46 by maykman           #+#    #+#             */
-/*   Updated: 2022/04/14 16:50:11 by maykman          ###   ########.fr       */
+/*   Updated: 2022/04/23 19:36:36 by maykman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	size_t	srclen;
 
+	if (!dst || !src)
+		return (0);
 	srclen = ft_strlen(src);
 	if (srclen > dstsize - 1)
 	{

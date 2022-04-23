@@ -6,7 +6,7 @@
 /*   By: maykman <maykman@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 19:12:37 by maykman           #+#    #+#             */
-/*   Updated: 2022/04/14 18:33:43 by maykman          ###   ########.fr       */
+/*   Updated: 2022/04/23 19:38:33 by maykman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	size_t	needle_len;
 
+	if (!haystack || !needle)
+		return (0);
 	if (!*needle)
 		return ((char *)haystack);
 	needle_len = ft_strlen(needle);
