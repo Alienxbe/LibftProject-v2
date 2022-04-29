@@ -6,7 +6,7 @@
 #    By: maykman <maykman@student.s19.be>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/21 19:34:14 by maykman           #+#    #+#              #
-#    Updated: 2022/04/23 23:48:20 by maykman          ###   ########.fr        #
+#    Updated: 2022/04/29 16:09:36 by maykman          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,7 @@ GREEN		:=	\033[38;5;10m
 BLUE		:= 	\033[38;5;14m
 YELLOW		:=	\033[38;5;226m
 RESET		:=	\033[38;5;7m
+PREFIX		=	[${YELLOW}${FT}${RESET}]\t
 
 # VARIABLES
 FT			=	libft
@@ -76,7 +77,7 @@ OBJS		:=	$(addprefix srcs/, ${SRCS:.c=.o})
 # RULES
 %.o:		%.c
 	${CC} ${CFLAGS} -c -I./${INCLUDES} $< -o ${<:.c=.o}
-	@echo "${BLUE}Compilation of $<...${RESET}"
+	@echo "${PREFIX}${BLUE}Compilation of $<...${RESET}"
 
 $(NAME):	${OBJS}
 	@ar -rcs $@ $^
@@ -86,11 +87,11 @@ all:		${NAME}
 
 clean:
 	@rm -f ${OBJS}
-	@echo "${YELLOW}Cleaning objects files...${RESET}"
+	@echo "${PREFIX}${YELLOW}Cleaning objects files...${RESET}"
 
 fclean:
 	@rm -f ${NAME} ${OBJS} ${OBJS_BONUS}
-	@echo "${RED}Full clean...${RESET}"
+	@echo "${PREFIX}${RED}Full clean...${RESET}"
 
 re:			fclean all
 
